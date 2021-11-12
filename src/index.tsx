@@ -97,7 +97,10 @@ type MarkStringProps = {
   autoCloseVoidElements?: boolean
 }
 
-export const MarkString = ({ jsx, autoCloseVoidElements }: MarkStringProps) => {
+export const MarkString = ({
+  jsx,
+  autoCloseVoidElements = true
+}: MarkStringProps) => {
   const [string, setString] = useState('')
   useEffect(() => {
     setString(replaceMarkers(jsx))
