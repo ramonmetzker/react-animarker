@@ -12,14 +12,12 @@ type StyledMarkProps = {
 
 const StyledMark = styled.mark<StyledMarkProps>`
   ${(props) => css`
-    background-image: ${`linear-gradient(90deg, ${
-      props.bgColor || 'white'
-    } 50%, ${props.color || 'yellow'} 0 )`};
+    background-image: ${`linear-gradient(90deg, ${props.bgColor} 50%, ${props.color} 0 )`};
   `}
   background-size: 200%;
   background-position: 0;
   ${(props) => css`
-    transition: all ${props.duration || 1}s ${props.transition || 'ease'};
+    transition: all ${props.duration}s ${props.transition};
   `}
   transition: all 1s ease-out;
   color: inherit;
@@ -63,17 +61,32 @@ function replaceMarkers(content: string): string {
 }
 
 type MarkProps = {
-  children: React.ReactNode
+  children?: React.ReactNode
   color?: string
   bgColor?: string
+  transition?: 'ease' | 'ease-out' | 'ease-in-out' | 'linear' | string
+  duration?: number
 }
 
-export const Mark = ({ children }: MarkProps): JSX.Element => {
+export const Mark = ({
+  children,
+  bgColor = 'white',
+  color = 'yellow',
+  duration = 1,
+  transition = 'ease'
+}: MarkProps): JSX.Element => {
   const ref = createRef<HTMLElement>()
   const isVisible = useOnScreen(ref)
 
   return (
-    <StyledMark ref={ref} className={`${isVisible && 'highlighted'}`}>
+    <StyledMark
+      ref={ref}
+      className={`${isVisible && 'highlighted'}`}
+      bgColor={bgColor}
+      color={color}
+      duration={duration}
+      transition={transition}
+    >
       {children}
     </StyledMark>
   )
