@@ -8,6 +8,10 @@ Add animated mark tags on your text. These markers will be highlighted as soon a
 
 [![NPM](https://img.shields.io/npm/v/react-animarker.svg)](https://www.npmjs.com/package/react-animarker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Live preview
+
+[Demo](https://react-animarker-5o4pr620f-ramonmetzker.vercel.app/)
+
 ## Install
 
 ```bash
