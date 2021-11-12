@@ -1,3 +1,5 @@
+![Animarker](https://raw.githubusercontent.com/ramonmetzker/react-animarker/master/example/src/assets/animarker.png)
+
 # react-animarker
 
 > Animated &lt;mark&gt; tags on scroll
@@ -14,7 +16,7 @@ npm install --save react-animarker
 
 ## &lt;Mark&gt;&lt;/Mark&gt;
 
-The Mark component returns a custom &lt;mark&gt; which will be highlighted when it is on viewport. The component uses the IntersectionObserver API to determine wheter the text is visible or not.
+The Mark component returns a custom &lt;mark&gt; which will be highlighted when it is on viewport. The component uses the IntersectionObserver API to determine whether the text is visible or not.
 
 | property              | description                                                                                                       | type                                                                |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
