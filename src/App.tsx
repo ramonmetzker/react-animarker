@@ -29,7 +29,7 @@ const MyJsxString = `
 
 const App = () => {
   return (
-    <>
+    <React.Fragment>
       <Header />
       <section className='scroll'>
         <h2>Scroll down</h2>
@@ -66,7 +66,7 @@ const App = () => {
         <MarkString jsx={MyJsxString} renderInWrapper={false} />
       </div>
       <Footer />
-    </>
+    </React.Fragment>
   )
 }
 
