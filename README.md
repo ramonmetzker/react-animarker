@@ -51,8 +51,9 @@ Unfortunately, it's still not possible to customize the Mark that is returned he
 
 | property                         | description                                                                                                                                                                                                                   | type    |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| jsx                              | The html string                                                                                                                                                                                                               | string  |
+| jsx                              | The htmlstring                                                                                                                                                                                                                | string  |
 | autoCloseVoidElements (optional) | Deals with the void elements from html which are rendered as 'not valid' JSX.<br> If your string comes with &lt;img&gt;, &lt;hr&gt;,&lt;br&gt;, this will close the tags in order to render them as valid JSX. Default `true` | boolean |
+| renderInWrapper (optional)       | Renders the content inside a div with a class of jsx-parser. Default `true`                                                                                                                                                   | boolean |
 
 ```tsx
 import React, { Component } from 'react'
