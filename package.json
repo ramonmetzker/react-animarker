@@ -1,7 +1,7 @@
 {
   "name": "react-animarker",
   "version": "1.0.0",
-  "description": "Animated &lt;mark&gt; tags on scroll",
+  "description": "Animated mark tags on scroll",
   "author": "ramonmetzker",
   "license": "MIT",
   "repository": "ramonmetzker/react-animarker",
