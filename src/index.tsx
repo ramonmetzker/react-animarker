@@ -11,6 +11,7 @@ type StyledMarkProps = {
 }
 
 const StyledMark = styled.mark<StyledMarkProps>`
+  background-color: transparent;
   ${(props) => css`
     background-image: ${`linear-gradient(90deg, ${props.bgColor} 50%, ${props.color} 0 )`};
   `}
@@ -19,7 +20,6 @@ const StyledMark = styled.mark<StyledMarkProps>`
   ${(props) => css`
     transition: all ${props.duration}s ${props.transition};
   `}
-  transition: all 1s ease-out;
   color: inherit;
 
   &.highlighted {
@@ -95,11 +95,13 @@ export const Mark = ({
 type MarkStringProps = {
   jsx: string
   autoCloseVoidElements?: boolean
+  renderInWrapper?: boolean
 }
 
 export const MarkString = ({
   jsx,
-  autoCloseVoidElements = true
+  autoCloseVoidElements = true,
+  renderInWrapper = true
 }: MarkStringProps) => {
   const [string, setString] = useState('')
   useEffect(() => {
@@ -111,6 +113,7 @@ export const MarkString = ({
       components={{ Mark }}
       jsx={string}
       autoCloseVoidElements={autoCloseVoidElements}
+      renderInWrapper={renderInWrapper}
     />
   )
 }
