@@ -44,6 +44,32 @@ class Example extends Component {
 }
 ```
 
+## &lt;MarkString /&gt;
+
+This component receives an html string, replaces any &lt;mark&gt;'s with &lt;Mark&gt;'s and renders the string as React Components. It is made under [react-jsx-parser](https://www.npmjs.com/package/react-jsx-parser). This can be useful if you are dealing with text coming from a WYSIWYG editor.
+Unfortunately, it's still not possible to customize the Mark that is returned here. For now, you can implement your own MarkString component. Take a look at react-jsx-parser's docs.
+
+| property                         | description                                                                                                                                                                                                                   | type    |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| jsx                              | The html string                                                                                                                                                                                                               | string  |
+| autoCloseVoidElements (optional) | Deals with the void elements from html which are rendered as 'not valid' JSX.<br> If your string comes with &lt;img&gt;, &lt;hr&gt;,&lt;br&gt;, this will close the tags in order to render them as valid JSX. Default `true` | boolean |
+
+```tsx
+import React, { Component } from 'react'
+
+import { MarkString } from 'react-animarker'
+
+const myJsxString = `<h1>This is a regular html tag</h1><p>This is a regular text with some <mark>highlighted</mark> content</p>`
+
+class Example extends Component {
+  render() {
+    return (
+      <MarkString jsx={myJsxString}>
+    )
+  }
+}
+```
+
 ## License
 
 MIT © [ramonmetzker](https://github.com/ramonmetzker)
