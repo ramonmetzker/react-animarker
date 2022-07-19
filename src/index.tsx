@@ -77,15 +77,19 @@ export const Mark = ({
 }: MarkProps): JSX.Element => {
   const ref = createRef<HTMLElement>()
   const isVisible = useOnScreen(ref)
+  const [_duration] = useState(duration)
+  const [_transition] = useState(transition)
+  const [_bgColor] = useState(bgColor)
+  const [_color] = useState(color)
 
   return (
     <StyledMark
       ref={ref}
       className={`${isVisible && 'highlighted'}`}
-      bgColor={bgColor}
-      color={color}
-      duration={duration}
-      transition={transition}
+      bgColor={_bgColor}
+      color={_color}
+      duration={_duration}
+      transition={_transition}
     >
       {children}
     </StyledMark>
