@@ -1,3 +1,7 @@
+### ⚠ This package has been deprecated. A new version is being maintened [here](https://github.com/keznet/react-animarker).
+
+****
+
 ![Animarker](https://raw.githubusercontent.com/ramonmetzker/react-animarker/master/example/src/assets/animarker.png)
 
 # react-animarker
